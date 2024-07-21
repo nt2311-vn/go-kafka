@@ -1,0 +1,12 @@
+# syntax=docker/dockerfile:1
+FROM golang:1.16-alpine
+
+WORKDIR /app
+
+COPY . .
+
+RUN go mod tidy
+RUN go build -o consumer ./consumer.go
+
+CMD ["./consumer"]
+
