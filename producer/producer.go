@@ -35,7 +35,7 @@ func ConnectProducer(brokerUrl []string) (sarama.SyncProducer, error) {
 }
 
 func PushCommentToQueue(topic string, message []byte) error {
-	brokerUrl := []string{"localhost:29092"}
+	brokerUrl := []string{"localhost:9092"}
 	producer, err := ConnectProducer(brokerUrl)
 	if err != nil {
 		return err
