@@ -12,7 +12,7 @@ import (
 func main() {
 	topic := "comments"
 
-	consumer, err := connectConsumer([]string{"localhost:29092"})
+	consumer, err := connectConsumer([]string{"localhost:9092"})
 	if err != nil {
 		panic(err)
 	}
@@ -39,7 +39,7 @@ func main() {
 			case msg := <-subscriber.Messages():
 				msgCount++
 				fmt.Printf(
-					"Received message Count: %d: | Topic: %s | Message(%s)",
+					"Received message Count: %d: | Topic: %s | Message(%s)\n",
 					msgCount,
 					string(msg.Topic),
 					string(msg.Value),
